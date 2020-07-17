@@ -9,7 +9,7 @@
 
 <body>
     <div id="app">
-        
+        <mainapp></mainapp>
     </div>
 </body>
 
