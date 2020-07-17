@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <p>well</p>
+    <div id="app">
+        
+    </div>
 </body>
 
 </html>
