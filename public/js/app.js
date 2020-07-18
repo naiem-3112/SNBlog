@@ -1908,6 +1908,10 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var _data$created$created;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -1917,13 +1921,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 // here data property is a local memory for this template
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (_data$created$created = {
   data: function data() {
     return {
       name: 'Shahadat Hossain Naiem'
     };
+  },
+  //beforecreate hook can't access from local memory and HTML element bcz its not rendering both yet when vue instance are created
+  created: function created() {
+    console.log(this.name);
   }
-});
+}, _defineProperty(_data$created$created, "created", function created() {
+  console.log(this.name);
+}), _defineProperty(_data$created$created, "mounted", function mounted() {
+  console.log(this.$refs.ref1);
+}), _data$created$created);
 
 /***/ }),
 
@@ -19643,7 +19655,7 @@ var render = function() {
   return _c("div", [
     _c("p", [_vm._v("This is hook page through vue router")]),
     _vm._v(" "),
-    _c("h2", [_vm._v("Understanding Hook")]),
+    _c("h2", { ref: "ref1" }, [_vm._v("Understanding Hook")]),
     _vm._v(" "),
     _c("h3", [_vm._v("My name is " + _vm._s(_vm.name))])
   ])
@@ -34888,7 +34900,7 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
+/* harmony import */ var _router_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router.js */ "./resources/js/router.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); //load vue
@@ -34900,7 +34912,7 @@ Vue.component('mainapp', __webpack_require__(/*! ./components/mainapp */ "./reso
 
 var app = new Vue({
   el: '#app',
-  router: _router__WEBPACK_IMPORTED_MODULE_0__["default"]
+  router: _router_js__WEBPACK_IMPORTED_MODULE_0__["default"]
 });
 
 /***/ }),
@@ -35179,7 +35191,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_pages_firstpage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/pages/firstpage */ "./resources/js/components/pages/firstpage.vue");
 /* harmony import */ var _components_pages_two__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/pages/two */ "./resources/js/components/pages/two.vue");
-/* harmony import */ var _components_pages_hook__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/pages/hook */ "./resources/js/components/pages/hook.vue");
+/* harmony import */ var _components_pages_hook__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/pages/hook */ "./resources/js/components/pages/hook.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); //as vue-router is a plugin need to use this.
@@ -35195,7 +35207,7 @@ var routes = [{
   component: _components_pages_two__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
   path: '/hook',
-  component: _components_pages_hook__WEBPACK_IMPORTED_MODULE_5__["default"]
+  component: _components_pages_hook__WEBPACK_IMPORTED_MODULE_4__["default"]
 }];
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
