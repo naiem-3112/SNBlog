@@ -4,6 +4,8 @@ Vue.use(Router)//as vue-router is a plugin need to use this.
 import firstPage from './components/pages/firstpage'
 import two from './components/pages/two'
 import hook from './components/pages/hook'
+import method from './components/pages/basicmethod'
+
 const routes = [
     {
         path: '/one',
@@ -18,6 +20,11 @@ const routes = [
     {
         path: '/hook',
         component: hook,
+    },
+
+    {
+        path: '/method',
+        component: method,
     },
 ];
 
