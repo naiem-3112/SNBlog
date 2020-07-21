@@ -1924,41 +1924,57 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       counter: 0,
-      blogs: []
+      blogs: [],
+      showItem: true
     };
   },
   methods: {
     updatecounter: function updatecounter(number) {
       this.counter += number;
+    },
+    changeShow: function changeShow() {
+      this.showItem = !this.showItem;
     }
   },
   created: function created() {
-    this.counter = 100; //get the blog post
+    this.counter = 50; //get the blog post
 
     var posts = [{
       title: 'title 1',
       post: 'post 1',
       id: 1
     }, {
-      title: 'title 1',
-      post: 'post 1',
-      id: 2
+      title: 'title 2',
+      post: 'post 2',
+      id: 5
     }, {
-      title: 'title 1',
-      post: 'post 1',
+      title: 'title 3',
+      post: 'post 3',
       id: 3
     }, {
-      title: 'title 1',
-      post: 'post 1',
+      title: 'title 4',
+      post: 'post 4',
       id: 4
     }, {
-      title: 'title 1',
-      post: 'post 1',
-      id: 5
+      title: 'title 5',
+      post: 'post 5',
+      id: 2
     }];
     this.blogs = posts;
   }
@@ -19717,15 +19733,50 @@ var render = function() {
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
-      _vm._l(_vm.blogs, function(blog, i) {
-        return _c("div", { key: i }, [
+      _vm._l(_vm.blogs, function(blog) {
+        return _c("div", { key: blog.id }, [
           _c("h1", [_vm._v(_vm._s(blog.title))]),
           _vm._v(" "),
           _c("p", [_vm._v(_vm._s(blog.post))]),
           _vm._v(" "),
           _c("p", [_vm._v(_vm._s(blog.id))])
         ])
-      })
+      }),
+      _vm._v(" "),
+      _c("br"),
+      _c("br"),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _c("div", [
+        _vm.showItem
+          ? _c("h2", [_vm._v('show this item if "showItem" is true')])
+          : _c("h2", [_vm._v('show this item if "showItem" is false')])
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          on: {
+            click: function($event) {
+              _vm.showItem = !_vm.showItem
+            }
+          }
+        },
+        [_vm._v("change visibility")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          on: {
+            click: function($event) {
+              return _vm.changeShow()
+            }
+          }
+        },
+        [_vm._v("by method")]
+      )
     ],
     2
   )
