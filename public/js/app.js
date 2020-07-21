@@ -1916,16 +1916,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      counter: 0
+      counter: 0,
+      blogs: []
     };
   },
   methods: {
     updatecounter: function updatecounter(number) {
       this.counter += number;
     }
+  },
+  created: function created() {
+    this.counter = 100; //get the blog post
+
+    var posts = [{
+      title: 'title 1',
+      post: 'post 1',
+      id: 1
+    }, {
+      title: 'title 1',
+      post: 'post 1',
+      id: 2
+    }, {
+      title: 'title 1',
+      post: 'post 1',
+      id: 3
+    }, {
+      title: 'title 1',
+      post: 'post 1',
+      id: 4
+    }, {
+      title: 'title 1',
+      post: 'post 1',
+      id: 5
+    }];
+    this.blogs = posts;
   }
 });
 
@@ -19651,33 +19686,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h2", [_vm._v("Count number " + _vm._s(_vm.counter))]),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        on: {
-          click: function($event) {
-            return _vm.updatecounter(1)
+  return _c(
+    "div",
+    [
+      _c("h2", [_vm._v("Count number " + _vm._s(_vm.counter))]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updatecounter(1)
+            }
           }
-        }
-      },
-      [_vm._v("increase")]
-    ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        on: {
-          click: function($event) {
-            return _vm.updatecounter(-1)
+        },
+        [_vm._v("increase")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updatecounter(-1)
+            }
           }
-        }
-      },
-      [_vm._v("decrease")]
-    )
-  ])
+        },
+        [_vm._v("decrease")]
+      ),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _vm._l(_vm.blogs, function(blog, i) {
+        return _c("div", { key: i }, [
+          _c("h1", [_vm._v(_vm._s(blog.title))]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(blog.post))]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(blog.id))])
+        ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
