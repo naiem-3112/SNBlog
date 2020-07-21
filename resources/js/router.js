@@ -6,6 +6,7 @@ import two from './components/pages/two'
 import hook from './components/pages/hook'
 import method from './components/pages/basicmethod'
 import home from './components/project/home'
+import tag from './components/project/tag'
 
 const routes = [
 
@@ -14,6 +15,11 @@ const routes = [
     {
         path: '/home',
         component: home,
+    },
+
+    {
+        path: '/tags',
+        component: tag,
     },
 
     // basic routes.....
