@@ -9,14 +9,14 @@ import home from './components/project/home'
 
 const routes = [
 
-    // project
+    // project routes......
+
     {
         path: '/home',
         component: home,
     },
 
-
-
+    // basic routes.....
     {
         path: '/one',
         component: firstPage,

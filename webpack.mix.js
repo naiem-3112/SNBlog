@@ -12,3 +12,9 @@
  */
 
 mix.js('resources/js/app.js', 'public/js')
+
+// concate some plain css
+mix.styles([
+    'public/css/main.css',
+    'public/css/grid.min.css',
+], 'public/css/all.css');
